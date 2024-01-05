@@ -1,0 +1,70 @@
+<div class="layout-mobile-menu" id="layout-mobile-menu">
+    <div class="modal-mobile-menu">
+        <i class="fa-solid fa-times close"></i>
+        <div class="menu">
+            <div class="head">
+                <span class="logo">Poesia</span>
+                <span>- Revista literaria -</span>
+            </div>
+            <ul>
+                <li class="{% if request.path == '/' %}active{% endif %}">
+                    <a href="{% url 'core:home' %}">Inicio</a>
+                </li>
+                <li class="{% if request.path|slice:':10' == '/magazine/' %}active{% endif %}">
+                    <a href="{% url 'magazine:magazine' %}">Números</a>
+                </li>
+                <li class="{% if request.path|slice:':9' == '/authors/' %}active{% endif %}">
+                    <a href="{% url 'authors:authors' %}">Autores</a>
+                </li>
+                <li class="{% if request.path|slice:':4' == '/us/' %}active{% endif %}">
+                    <a href="{% url 'core:us' %}">¿Quiénes somos?</a>
+                </li>
+                <li class="{% if request.path|slice:':7' == '/howto/' %}active{% endif %}">
+                    <a href="{% url 'core:howto' %}">¿Cómo publicar?</a>
+                </li>
+                <li class="{% if request.path|slice:':6' == '/blog/' %}active{% endif %}">
+                    <a href="{% url 'blog:blog' %}">Blog</a>
+                </li>
+                <li class="{% if request.path|slice:':9' == '/contact/' %}active{% endif %}">
+                    <a href="{% url 'contact:contact' %}">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<nav class="mobile-menu" id="mobile-menu">
+    <div class="nav-hero">
+        <span class="logo">Poesia</span>
+        <span>- Revista literaria -</span>
+    </div>
+    <i class="fa-solid fa-bars" id="activateMenu"></i>
+</nav>
+<nav class="main-menu" id="main-menu">
+    <div class="nav-hero">
+        <span class="logo">Poesia</span>
+        <span>- Revista literaria -</span>
+    </div>
+    <ul>
+        <li class="{% if request.path == '/' %}active{% endif %}">
+            <a href="{% url 'core:home' %}">Inicio</a>
+        </li>
+        <li class="{% if request.path|slice:':10' == '/magazine/' %}active{% endif %}">
+            <a href="{% url 'magazine:magazine' %}">Números</a>
+        </li>
+        <li class="{% if request.path|slice:':9' == '/authors/' %}active{% endif %}">
+            <a href="{% url 'authors:authors' %}">Autores</a>
+        </li>
+        <li class="{% if request.path|slice:':4' == '/us/' %}active{% endif %}">
+            <a href="{% url 'core:us' %}">¿Quiénes somos?</a>
+        </li>
+        <li class="{% if request.path|slice:':7' == '/howto/' %}active{% endif %}">
+            <a href="{% url 'core:howto' %}">¿Cómo publicar?</a>
+        </li>
+        <li class="{% if request.path|slice:':6' == '/blog/' %}active{% endif %}">
+            <a href="{% url 'blog:blog' %}">Blog</a>
+        </li>
+        <li class="{% if request.path|slice:':9' == '/contact/' %}active{% endif %}">
+            <a href="{% url 'contact:contact' %}">Contacto</a>
+        </li>
+    </ul>
+</nav>

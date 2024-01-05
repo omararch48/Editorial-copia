@@ -1,0 +1,49 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}Números{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content main-content-relative">
+            <a href="{% url 'magazine:magazine-detail' slug=magazine.slug %}" class="return">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>
+                <span>&nbsp;Regresar al índice</span>
+            </a>
+            <h2 class="page-title">
+                {{ article.article_title }}
+            </h2>
+            <div class="magazine-number-container">
+                <div class="magazine-article-header">
+                    {% if article.author.status == '0' %}
+                    <span class="date">{{ article.author }}</span>
+                    {% else %}
+                    <span class="date">Autor anónimo</span>
+                    {% endif %}
+                    <span class="date">{{ article.created }}</span>
+                </div>
+                <div class="magazine-number-article">
+                    {{ article.text | safe }}
+                </div>
+                <div class="magazine-number-footer">
+                    {% if article_left %}
+                    <a href="{% url 'magazine:magazine-article' slug=magazine.slug article_slug=article_left.slug %}">{{ article_left.article_title }}</a>
+                    {% else %}
+                    <a href="{% url 'magazine:magazine-introduction' slug=magazine.slug %}">Introducción</a>
+                    {% endif %}
+                    {% if article_right %}
+                    <a href="{% url 'magazine:magazine-article' slug=magazine.slug article_slug=article_right.slug %}">{{ article_right.article_title }}</a>
+                    {% else %}
+                    <a href="{% url 'magazine:magazine' %}"></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

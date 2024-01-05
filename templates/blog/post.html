@@ -1,0 +1,33 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %} Blog | {{ post.title }}{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content">
+            <h2 class="page-title">{{ post.title }}</h2>
+            <div class="blog-article-container">
+                <div class="image">
+                    <img src="{{ post.image.get_url }}" alt="{{ post.title }} image">
+                </div>
+                <div class="categories">
+                    <ul>
+                        {% for category in post.categories.all %}
+                        <li>
+                            <a href="{% url 'blog:blog-category' slug=category.slug %}">{{ category }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="date">{{ post.created | date }}</div>
+                <div class="author">{{ post.author }}</div>
+                {{ post.content | safe }}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

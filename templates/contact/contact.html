@@ -1,0 +1,61 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content">
+            <h2 class="page-title">Redes sociales</h2>
+            {% if social_dictionary %}
+            <div class="social-container">
+                {% for social in social_dictionary %}
+                {% if social.active == '0' %}
+                <a href="{{ social.url }}" target="_blank">
+                    <i class="social-color transition-04 fa-brands {{ social.name }}"></i>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <h2 class="page-title">Contacto</h2>
+            <div class="contact-container">
+                {% if 'ok' in request.GET %}
+                <span class="success">Mensaje enviado, te contactaremos a la brevedad</span>
+                {% elif error_message %}
+                <span class="error">{{ error_message }}</span>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <label for="name">Nombre</label>
+                        {{ form.name }}
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email</label>
+                        {{ form.email }}
+                    </fieldset>
+                    <fieldset>
+                        <label for="phone">Teléfono</label>
+                        {{ form.phone }}
+                    </fieldset>
+                    <fieldset>
+                        <label for="subject">Asunto</label>
+                        {{ form.subject }}
+                    </fieldset>
+                    <fieldset>
+                        <label for="message">Mensaje</label>
+                        {{ form.message }}
+                    </fieldset>
+                    <button type="submit">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

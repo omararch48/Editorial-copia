@@ -1,0 +1,44 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}Números{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content">
+            <h2 class="page-title multi-title">
+                <span>Poesia</span>
+                <span>{{ magazine.magazine_name }}</span>
+            </h2>
+            <div class="magazine-number-container">
+                <div class="magazine-number-image">
+                    <img src="{{ magazine.image.get_url }}" alt="primer-ejemplar">
+                </div>
+                <div class="magazine-number-date">
+                    <span class="date">{{ magazine.created }}</span>
+                </div>
+                <div class="magazine-number-content">
+                    <ul>
+                        <li><a href="{% url 'magazine:magazine-introduction' slug=magazine.slug %}">Introducción</a></li>
+                        {% for article in articles %}
+                        <li>
+                            <a class="article" href="{% url 'magazine:magazine-article' slug=magazine.slug article_slug=article.slug %}">
+                                <span>{{ article.article_title }}</span>
+                                {% if article.author.status == '0' %}
+                                <span class="author">{{ article.author }}</span>
+                                {% else %}
+                                <span class="author">Autor anónimo</span>
+                                {% endif %}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

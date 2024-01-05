@@ -1,0 +1,137 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container main">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content">
+            <section class="section-home">
+                <div class="section-header">
+                    <div class="section-title">Esta es una sección de inicio</div>
+                    <div class="section-text">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Dolorum ducimus consectetur quo nisi enim minima aliquam ad illo reiciendis id,
+                            dignissimos cumque.
+                            Quas, nihil possimus voluptates ullam quibusdam aperiam magnam.
+                        </p>
+                        <a href="./contact.html">Ver más</a>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="{% static 'img/jpg/more_books.jpg' %}" alt="">
+                </div>
+            </section>
+
+            <section class="section-home">
+                <div class="section-svg">
+                    <div class="card">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil"
+                                width="128" height="128" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+                                <path d="M13.5 6.5l4 4" />
+                            </svg>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Odit, repudiandae perferendis.
+                            Officiis sequi recusandae consequuntur aperiam quibusdam quos assumenda enim animi
+                            dolorum.
+                            Ullam aut iure ipsum consequatur assumenda voluptatibus illo.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book"
+                                width="128" height="128" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                                <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                                <path d="M3 6l0 13" />
+                                <path d="M12 6l0 13" />
+                                <path d="M21 6l0 13" />
+                            </svg>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Odit, repudiandae perferendis.
+                            Ullam aut iure ipsum consequatur assumenda voluptatibus illo.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-books"
+                                width="128" height="128" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M5 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
+                                <path
+                                    d="M9 4m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
+                                <path d="M5 8h4" />
+                                <path d="M9 16h4" />
+                                <path
+                                    d="M13.803 4.56l2.184 -.53c.562 -.135 1.133 .19 1.282 .732l3.695 13.418a1.02 1.02 0 0 1 -.634 1.219l-.133 .041l-2.184 .53c-.562 .135 -1.133 -.19 -1.282 -.732l-3.695 -13.418a1.02 1.02 0 0 1 .634 -1.219l.133 -.041z" />
+                                <path d="M14 9l4 -1" />
+                                <path d="M16 16l3.923 -.98" />
+                            </svg>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Odit, repudiandae perferendis.
+                            Officiis sequi recusandae consequuntur aperiam quibusdam quos assumenda enim animi
+                            dolorum.
+                            Ullam aut iure ipsum consequatur assumenda voluptatibus illo.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-home">
+                <div class="section-header">
+                    <div class="section-title">Esta es otra sección</div>
+                    <div class="section-text">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Dolorum ducimus consectetur quo nisi enim minima aliquam ad illo reiciendis id,
+                            dignissimos cumque.
+                        </p>
+                        <a href="./contact.html">Ver más</a>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="{% static 'img/jpg/book.jpg' %}" alt="">
+                </div>
+            </section>
+
+            <section class="section-home">
+                <div class="section-header">
+                    <div class="section-title">Una más</div>
+                    <div class="section-text">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Dolorum ducimus consectetur quo nisi enim minima aliquam ad illo reiciendis id,
+                            dignissimos cumque.
+                            Quas, nihil possimus voluptates ullam quibusdam aperiam magnam.
+                        </p>
+                        <a href="./contact.html">Ver más</a>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="{% static 'img/jpg/books.jpg' %}" alt="">
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+{% endblock %}

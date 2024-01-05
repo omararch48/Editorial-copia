@@ -1,0 +1,63 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content">
+            <h2 class="page-title">Blog</h2>
+            <div class="blog-container">
+                <div class="categories">
+                    <ul>
+                        <li>
+                            <a class="{% if slug == '' %}selected{% endif %}" href="{% url 'blog:blog' %}">Todas</a> 
+                        </li>
+                        {% for category in categories %}
+                        <li>
+                            <a class="{% if slug == category.slug %}selected{% endif %}" href="{% url 'blog:blog-category' slug=category.slug %}">{{ category.name }}</a> 
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="articles-container">
+                    {% for article in posts %}
+                    <div class="article">
+                        <div class="article-image">
+                            <img src="{{ article.image.get_url }}" alt="{{ article.title }} image">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-title">
+                                <h3>{{ article.title }}</h3>
+                            </div>
+                            <div class="article-categories">
+                                <ul>
+                                    {% for category in article.categories.all %}
+                                    <li>
+                                        <a href="{% url 'blog:blog-category' slug=category.slug %}">{{ category }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="article-date">{{ article.created | date }}</div>
+                            <div class="article-author">{{ article.author }}</div>
+                            <div class="article-text">
+                                {% if article.intro|length > 300 %}
+                                <p>{{ article.intro | slice:"297" }}...</p>
+                                {% else %}
+                                <p>{{ article.intro }}</p>
+                                {% endif %}
+                            </div>
+                            <a class="article-button" href="{% url 'blog:post' slug=article.slug %}">Leer entrada</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

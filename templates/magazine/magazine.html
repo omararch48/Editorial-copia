@@ -1,0 +1,34 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}Números{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content">
+            <h2 class="page-title">Números</h2>
+            <div class="magazine-container">
+                {% for magazine in magazines %}
+                <div class="magazine">
+                    <div class="magazine-image">
+                        <a href="{% url 'magazine:magazine-detail' slug=magazine.slug %}">
+                            <div class="layout">
+                                <span class="logo">Poesia</span>
+                                <span>- Revista literaria -</span>
+                            </div>
+                            <img src="{{ magazine.image.get_url }}" alt="{{ magazine.slug }}">
+                        </a>
+                    </div>
+                    <a href="{% url 'magazine:magazine-detail' slug=magazine.slug %}">
+                        <h3>{{ magazine.magazine_name }}</h3>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

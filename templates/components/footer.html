@@ -1,0 +1,21 @@
+<footer class="main-footer">
+    <span class="social-footer">
+        <h3>Siguenos en nuestras redes sociales</h3>
+        {% if social_dictionary %}
+        <div class="social-container"> 
+        {% for social in social_dictionary %}
+            {% if social.active == '0' %}
+            {% if forloop.counter0 < 3 %}
+            <a href="{{ social.url }}" target="_blank">
+                <i class="social-color transition-04 fa-brands {{ social.name }}"></i>
+            </a>
+            {% endif %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        {% endif %}
+    </span>
+    <span>
+        Revista literaria 2023
+    </span>
+</footer>

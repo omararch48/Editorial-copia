@@ -1,0 +1,43 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}Números{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content main-content-relative">
+            <a href="{% url 'magazine:magazine-detail' slug=magazine.slug %}" class="return">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>
+                <span>&nbsp;Regresar al índice</span>
+            </a>
+            <h2 class="page-title multi-title">
+                <span>Poesia</span>
+                <span>{{ magazine.magazine_name }}</span>
+            </h2>
+            <div class="magazine-number-container">
+    
+                <div class="magazine-number-image">
+                    <img src="{{ magazine.image.get_url }}" alt="primer-ejemplar">
+                </div>
+    
+                <div class="magazine-number-date">
+                    <span class="date">{{ magazine.created }}</span>
+                </div>
+    
+                <div class="magazine-number-introduction">
+                    {{ magazine.intro_text | safe }}
+                </div>
+                <div class="magazine-number-footer">
+                    <a href="{% url 'magazine:magazine-article' slug=magazine.slug article_slug=article.slug %}"></a>
+                    <a href="{% url 'magazine:magazine-article' slug=magazine.slug article_slug=article.slug %}">{{ article.article_title }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

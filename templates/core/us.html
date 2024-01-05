@@ -1,0 +1,48 @@
+{% extends '../base.html' %}
+
+{% load static %}
+
+{% block title %}¿Quiénes comos?{% endblock %}
+
+{% block content %}
+<main id="main" class="main-container page">
+    <div class="main-inner">
+        {% include '../components/sidebar.html' %}
+        <div class="main-content">
+            <h2 class="page-title">¿Quiénes somos?</h2>
+            <div class="us-container">
+                <img src="{% static 'img/jpg/book.jpg' %}" alt="">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque maxime voluptates magnam
+                    officia, nemo molestiae modi id quos delectus esse similique! Officia quasi sunt id alias tempora!
+                    Quod, quas?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque maxime voluptates magnam
+                    officia, nemo molestiae modi id quos delectus esse similique! Officia quasi sunt id alias tempora!
+                    Quod, quas?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque maxime voluptates magnam
+                    officia, nemo molestiae modi id quos delectus esse similique! Officia quasi sunt id alias tempora!
+                    Quod, quas?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque maxime voluptates magnam
+                    officia, nemo molestiae modi id quos delectus esse similique! Officia quasi sunt id alias tempora!
+                    Quod, quas?
+                </p>
+                <h4>Lorem ipsum dolor sit amet consectetur</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque maxime voluptates magnam
+                    officia, nemo molestiae modi id quos delectus esse similique! Officia quasi sunt id alias tempora!
+                    Quod, quas?
+                </p>
+                <img src="{% static 'img/jpg/more_books.jpg' %}" alt="">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit blanditiis iste hic dignissimos
+                    aliquid quos facere sequi eaque, porro aliquam fugit repellendus perspiciatis temporibus officiis,
+                    fuga numquam. Explicabo, officiis cumque!
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit blanditiis iste hic dignissimos
+                    aliquid quos facere sequi eaque, porro aliquam fugit repellendus perspiciatis temporibus officiis,
+                    fuga numquam. Explicabo, officiis cumque!
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,34 @@
+# Default settings
+Editorial/settings.py
+
+# Cache
+__pycache__/
+
+# Staticfiles
+staticfiles/
+
+# Media files
+media/
+
+# ENV
+secret.json
+
+# JS
+Editorial-static/
+Editorial-vue/
+static/index.html
+
+# Enviroments
+.back/
+.env/
+.venv/
+.pipenv/
+back/
+env/
+venv/
+pipenv/
+
+# Ignore migration files
+**/migrations/[0-9][0-9][0-9][0-9]_*.py
+**/migrations/[0-9][0-9][0-9][0-9]_*.pyc
+
